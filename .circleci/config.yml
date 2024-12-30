@@ -1,0 +1,21 @@
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      # Use the official Python Docker image
+      - image: circleci/python:3.12
+    steps:
+      - checkout
+      - run:
+          name: Install Dependencies
+          command: python -m pip install --upgrade pip && pip install unittest
+      - run:
+          name: Run Tests
+          command: python -m unittest test_hello.py
+
+workflows:
+  version: 2
+  test_workflow:
+    jobs:
+      - test
