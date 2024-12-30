@@ -1,7 +1,7 @@
 import unittest
 from main import say_hello
 
-class TestHelloWorld(unittest.TestCase):
+class TestYogeshName(unittest.TestCase):
     def test_say_hello(self):
         """Test if say_hello returns 'Hello, Yogesh!'."""
         self.assertEqual(say_hello(), "Hello, Yogesh!")
